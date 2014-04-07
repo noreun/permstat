@@ -13,23 +13,19 @@
 
 %% load data 
 
-% data = struct;
-% data.time = D.time;
-% data.elec = leftlrpidx;
-% data.elecnames = {'C3', 'P3'};
-% data.raw = ft_lrp_allsubj(1:2);
-% data.label = {'Condition 1', 'Condition 2'};
-% data.ylim = {[-2 2] [-2 2]};
-% data.xTick = [-3200 -2400 -1600 -800 0 800 1600 2400 3200 4000];
-% data.colormap = zmap;
-% % data.xTick = [-1600 -800 0 800 1600 2400 3200 4000 4800 5600];
-% save('data', 'data');
-
 load('data');
 
-% data.time : Array with time (in seconds) for each sample
-% data.elec : electrodes to select
-% data.raw  : one cell where each entry conatin one condition represented by a matrix of [electrodes samples subjects]
+% Data is a structure as follows:
+
+% data.raw          = one cell where each entry contains one condition,
+%                       represented by a matrix of [electrodes samples subjects]
+% data.time         = Array with time (in seconds) for each sample
+% data.elec         = Array with electrodes index to select, e.g. [2 5]
+% data.elecnames    = Cell with used electrodes labels, e.g. {'C3', 'P3'};
+% data.label        = Cell with condition names, e.g. {'Condition 1', 'Condition 2'};
+% data.ylim         = Ylim, e.g. {[-2 2] [-2 2]};
+% data.xTick        = xTick, e.g. [-3200 -2400 -1600 -800 0 800 1600 2400 3200 4000];
+% data.colormap     = e.g. jet;
 
 %% set parameters
 
